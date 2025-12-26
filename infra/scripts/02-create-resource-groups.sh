@@ -1,9 +1,15 @@
 #!/bin/bash
-set -e
 
-source ../env/$1.env
+LOCATION="eastus"
 
 az group create \
-  --name $RESOURCE_GROUP \
-  --location $LOCATION \
-  --tags Environment=$ENV App=ServiceScheduler
+  --name rg-service-scheduler-dev \
+  --location $LOCATION
+
+az group create \
+  --name rg-service-scheduler-qa \
+  --location $LOCATION
+
+az group create \
+  --name rg-service-scheduler-prod \
+  --location $LOCATION
