@@ -6,7 +6,7 @@ LOCATION="eastus"
 RG="rg-service-scheduler-$ENV"
 SQL_SERVER="sql-scheduler-$ENV"
 ADMIN_USER="sqladminuser"
-ADMIN_PASSWORD="YourStrongPasswordHere"
+ADMIN_PASSWORD="ssdbadmpwd-$ENV"
 
 az sql server create \
   --name $SQL_SERVER \
