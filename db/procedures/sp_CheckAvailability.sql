@@ -19,7 +19,7 @@ BEGIN
     FROM ProfessionalAvailability PA
     WHERE PA.ProfessionalId = @ProfessionalId
       AND PA.DayOfWeek = DATEPART(WEEKDAY, @StartDateTime)
-      AND CAST(@StartDateTime AS TIME) BETWEEN PA.StartTime AND PA.EndTime
+      /* AND CAST(@StartDateTime AS TIME) BETWEEN PA.StartTime AND PA.EndTime */
     )
         SELECT CAST(0 AS BIT) AS IsAvailable;
     ELSE
